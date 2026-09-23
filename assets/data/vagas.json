@@ -1,0 +1,203 @@
+[
+  {
+    "id": 1,
+    "empresa": "Nuvem Digital",
+    "cargo": "Desenvolvedor Front-end Júnior",
+    "categoria": "Front-end",
+    "requisitos": ["HTML", "CSS", "JavaScript", "Git", "React"],
+    "modalidade": "Híbrido",
+    "salario": "R$ 3.500,00 a R$ 4.500,00",
+    "descricao da vaga": "Desenvolver interfaces responsivas e acessíveis integradas às APIs da empresa.",
+    "beneficios": [
+      "Vale-refeição",
+      "Plano de saúde",
+      "Auxílio home office",
+      "Horário flexível"
+    ]
+  },
+  {
+    "id": 2,
+    "empresa": "CodeWave Tecnologia",
+    "cargo": "Desenvolvedor Front-end Pleno",
+    "categoria": "Front-end",
+    "requisitos": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Testes automatizados",
+      "Git"
+    ],
+    "modalidade": "Remoto",
+    "salario": "R$ 7.000,00 a R$ 9.000,00",
+    "descricao da vaga": "Criar experiências digitais de alta performance em parceria com design e produto.",
+    "beneficios": ["Plano de saúde", "Vale-refeição", "PLR", "Auxílio educação"]
+  },
+  {
+    "id": 3,
+    "empresa": "Fintech Aurora",
+    "cargo": "Desenvolvedor Front-end Sênior",
+    "categoria": "Front-end",
+    "requisitos": [
+      "React",
+      "TypeScript",
+      "Arquitetura front-end",
+      "Testes",
+      "Liderança técnica"
+    ],
+    "modalidade": "Remoto",
+    "salario": "R$ 12.000,00 a R$ 15.000,00",
+    "descricao da vaga": "Liderar decisões técnicas e evoluir aplicações financeiras escaláveis e seguras.",
+    "beneficios": [
+      "Plano de saúde",
+      "Bônus anual",
+      "Stock options",
+      "Auxílio home office"
+    ]
+  },
+  {
+    "id": 4,
+    "empresa": "Soluções Ágeis",
+    "cargo": "Desenvolvedor Back-end Júnior",
+    "categoria": "Back-end",
+    "requisitos": ["Node.js", "JavaScript", "APIs REST", "SQL", "Git"],
+    "modalidade": "Presencial",
+    "salario": "R$ 4.000,00 a R$ 5.000,00",
+    "descricao da vaga": "Implementar serviços, integrações e rotinas de processamento para produtos web.",
+    "beneficios": [
+      "Vale-refeição",
+      "Vale-transporte",
+      "Plano de saúde",
+      "Seguro de vida"
+    ]
+  },
+  {
+    "id": 5,
+    "empresa": "DataBridge",
+    "cargo": "Desenvolvedor Back-end Pleno",
+    "categoria": "Back-end",
+    "requisitos": [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Docker",
+      "Microsserviços"
+    ],
+    "modalidade": "Híbrido",
+    "salario": "R$ 8.000,00 a R$ 10.000,00",
+    "descricao da vaga": "Desenvolver APIs robustas e serviços distribuídos com foco em qualidade.",
+    "beneficios": [
+      "Plano de saúde",
+      "Vale-refeição",
+      "Previdência privada",
+      "Cursos técnicos"
+    ]
+  },
+  {
+    "id": 6,
+    "empresa": "Mercado Conecta",
+    "cargo": "Desenvolvedor Back-end Sênior",
+    "categoria": "Back-end",
+    "requisitos": [
+      "Python",
+      "Django",
+      "AWS",
+      "Redis",
+      "Mensageria",
+      "Arquitetura de sistemas"
+    ],
+    "modalidade": "Remoto",
+    "salario": "R$ 13.000,00 a R$ 17.000,00",
+    "descricao da vaga": "Projetar plataformas escaláveis e orientar o time em boas práticas de engenharia.",
+    "beneficios": [
+      "Plano de saúde integral",
+      "Bônus por desempenho",
+      "Auxílio home office",
+      "Day off de aniversário"
+    ]
+  },
+  {
+    "id": 7,
+    "empresa": "Inova Labs",
+    "cargo": "Desenvolvedor Full Stack Júnior",
+    "categoria": "Fullstack",
+    "requisitos": ["JavaScript", "React", "Node.js", "MongoDB", "HTML e CSS"],
+    "modalidade": "Híbrido",
+    "salario": "R$ 5.000,00 a R$ 6.500,00",
+    "descricao da vaga": "Participar do desenvolvimento de funcionalidades completas, do front-end ao banco de dados.",
+    "beneficios": [
+      "Vale-refeição",
+      "Plano de saúde",
+      "Mentoria técnica",
+      "Horário flexível"
+    ]
+  },
+  {
+    "id": 8,
+    "empresa": "Plataforma Viva",
+    "cargo": "Desenvolvedor Full Stack Pleno",
+    "categoria": "Fullstack",
+    "requisitos": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Docker",
+      "CI/CD"
+    ],
+    "modalidade": "Remoto",
+    "salario": "R$ 9.000,00 a R$ 11.500,00",
+    "descricao da vaga": "Construir e manter produtos digitais escaláveis com equipes multidisciplinares.",
+    "beneficios": [
+      "Plano de saúde e odontológico",
+      "Vale-refeição",
+      "Auxílio internet",
+      "Auxílio certificações"
+    ]
+  },
+  {
+    "id": 9,
+    "empresa": "Orion Sistemas",
+    "cargo": "Desenvolvedor Full Stack Sênior",
+    "categoria": "Fullstack",
+    "requisitos": [
+      "Angular",
+      "Java",
+      "Spring",
+      "AWS",
+      "Kubernetes",
+      "Arquitetura de software"
+    ],
+    "modalidade": "Híbrido",
+    "salario": "R$ 14.000,00 a R$ 18.000,00",
+    "descricao da vaga": "Definir soluções completas e desenvolver sistemas corporativos de alta disponibilidade.",
+    "beneficios": [
+      "Plano de saúde",
+      "Bônus anual",
+      "Previdência privada",
+      "Participação nos lucros"
+    ]
+  },
+  {
+    "id": 10,
+    "empresa": "StartUp Horizonte",
+    "cargo": "Desenvolvedor Full Stack",
+    "categoria": "Fullstack",
+    "requisitos": [
+      "Vue.js",
+      "Node.js",
+      "TypeScript",
+      "MySQL",
+      "APIs REST",
+      "Git"
+    ],
+    "modalidade": "Remoto",
+    "salario": "R$ 6.500,00 a R$ 8.500,00",
+    "descricao da vaga": "Desenvolver funcionalidades e contribuir para a evolução técnica do produto.",
+    "beneficios": [
+      "Vale-refeição",
+      "Plano de saúde",
+      "Auxílio home office",
+      "Horário flexível"
+    ]
+  }
+]
