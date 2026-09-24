@@ -19,18 +19,116 @@
         alt="Uma mesa de escritório, com uma xícara, um notebook e um exemplo da funcionalidade do site, com a logo da empresa SkillMatch acima"
       />
       <nav class="links-nav">
-        <a href="#">Vagas de Emprego</a>
-        <a href="#">Cadastre sua vaga conosco</a>
+        <a href="#candidate-space">Vagas de Emprego</a>
+        <a href="#company-space">Cadastre sua vaga conosco</a>
         <a href="#">Contato</a>
       </nav>
     </header>
+
     <main>
-      <h1>SkillMatch: Sua nova carreira começa aqui!</h1>
-      <section></section>
+      <section id="candidate-space" class="candidate-space">
+        <h1>SkillMatch: Sua nova carreira começa aqui!</h1>
+
+        <form id="user-form">
+          <div>
+            <label for="user-name">Nome do(a) candidato(a)</label>
+            <input
+              id="user-name"
+              type="text"
+              name="user-name"
+              placeholder="Digite aqui seu nome..."
+              required
+            />
+          </div>
+
+          <div>
+            <label for="user-email">E-mail do(a) candidato(a)</label>
+            <input
+              id="user-email"
+              type="email"
+              name="user-email"
+              placeholder="Digite aqui seu E-mail..."
+              required
+            />
+          </div>
+
+          <div>
+            <label for="user-age">Idade do(a) candidato(a)</label>
+            <input
+              id="user-age"
+              type="number"
+              name="user-age"
+              placeholder="Digite aqui sua idade"
+              required
+            />
+          </div>
+
+          <fieldset class="category-fieldset">
+            <legend>Escolha sua área de atuação</legend>
+
+            <div class="category-option">
+              <input
+                id="front-end"
+                type="checkbox"
+                name="category"
+                value="front-end"
+              />
+              <label for="front-end">Front-End</label>
+            </div>
+
+            <div class="category-option">
+              <input
+                id="back-end"
+                type="checkbox"
+                name="category"
+                value="back-end"
+              />
+              <label for="back-end">Back-End</label>
+            </div>
+
+            <div class="category-option">
+              <input
+                id="fullstack"
+                type="checkbox"
+                name="category"
+                value="fullstack"
+              />
+              <label for="fullstack">Full Stack</label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Procurar vagas</button>
+        </form>
+      </section>
+
+      <section id="company-space" class="company-space">
+        <h2>
+          Possui uma vaga e tem interesse em cadastrá-la em nosso banco de
+          dados?
+        </h2>
+
+        <p>
+          Envie-nos um e-mail com os seguintes dados da sua vaga e garanta o
+          match perfeito!
+        </p>
+
+        <ul class="company-list">
+          <li>Nome da empresa</li>
+          <li>Cargo</li>
+          <li>Categoria</li>
+          <li>Requisitos</li>
+          <li>Modalidade</li>
+          <li>Faixa Salarial</li>
+          <li>Descrição e benefícios</li>
+        </ul>
+        <a href="mailto:skillmatch@exemplo.com"
+          >Clique aqui para cadastrar sua vaga</a
+        >
+      </section>
     </main>
     <footer>
-      <button class="tema">Alternar tema</button>
-      <p>2026 SkillMatch. Todos os direitos reservados</p>
+      <button class="theme">Alternar tema</button>
+      <p>© 2026 SkillMatch. Todos os direitos reservados</p>
     </footer>
 
     <script src="./assets/scripts/main.js" type="module"></script>
