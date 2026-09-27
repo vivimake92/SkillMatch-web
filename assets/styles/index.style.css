@@ -35,18 +35,91 @@ main {
   width: 100%;
   height: auto;
   align-self: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .links-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   a {
-    text-decoration: none;
+    text-decoration: underline;
   }
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 15px;
+}
+
+.about-space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+
+  border: 2px solid #bebdbd;
+  border-radius: 10px;
+  background-color: #faf7fd;
+}
+
+.skillmatch-logo {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.about-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.about-text {
+  max-width: 600px;
+
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: center;
+  color: #333;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.indicator-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 130px;
+  padding: 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.indicator-box h3 {
+  color: #761dc9;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.indicator-box p {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
 }
 
 #user-form {
@@ -56,6 +129,10 @@ main {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
+  border: 1px solid #bebdbd;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 10px;
 }
 
 #user-form > div {
@@ -79,16 +156,85 @@ main {
 .category-fieldset {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
+  background-color: #faf7fd;
 }
 
 .category-option {
   display: flex;
   align-items: center;
-  gap: 8px;
+  padding: 5px;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.category-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #761dc9;
+  cursor: pointer;
+}
+
+.legend-category {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5f16a3;
+}
+
+.seniority-option {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.category-option label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.seniority-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #761dc9;
+  cursor: pointer;
+}
+
+.seniority-option label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+#legend-seniority {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5f16a3;
+}
+
+.user-knowledge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #faf7fd;
+  justify-content: space-evenly;
+  font-size: 14px;
+}
+
+#legend-checkbox {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5f16a3;
 }
 
 #others-checked {
@@ -112,21 +258,36 @@ main {
 }
 
 .candidate-space {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 }
 
-.company-space {
+.candidate-space h2 {
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.candidate-space.active {
   display: flex;
+}
+
+.company-space {
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   width: 90%;
+  max-width: 1200px;
   padding: 30px;
   margin: auto;
   border: 2px solid #bebdbd;
   border-radius: 5px;
+  background-color: #faf7fd;
+}
+
+.company-space.active {
+  display: flex;
 }
 
 .company-space p {
@@ -141,4 +302,72 @@ main {
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+
+.company-space a:hover {
+  background-color: #5f16a3;
+}
+
+.company-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+.company-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 550;
+  background-color: #fff;
+}
+
+@media (max-width: 800px) {
+  .about-space {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .skillmatch-logo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-box {
+    width: 100%;
+  }
+
+  .indicators {
+    flex-wrap: wrap;
+  }
+
+  .indicator-box {
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 450px) {
+  .about-space {
+    width: 95%;
+    padding: 25px 15px;
+  }
+
+  .skillmatch-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .indicator-box {
+    width: 100%;
+  }
 }
