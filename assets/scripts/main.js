@@ -1,12 +1,20 @@
+import renderUserForm from "./ui.js";
+
 import fetchVagas from "./load-vagas.js";
-import toggleOutros from "./toggle-others.js";
-import toggleCandidate from "./toggle-candidate.js";
-import toggleCompany from "./toggle-company.js";
+
+import { toggleOutros, toggleCandidate, toggleCompany } from "./toggles.js";
+
+import { submitUserForm, loadUser } from "./form-user.js";
+
+renderUserForm();
+
+fetchVagas();
 
 toggleOutros();
-fetchVagas();
 toggleCandidate();
 toggleCompany();
 
+submitUserForm();
+loadUser();
+
 // console.log("Hello, World!");
-//console.log(fetchVagas());
