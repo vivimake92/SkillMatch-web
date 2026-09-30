@@ -11,3 +11,14 @@ export function getUser() {
 
   return JSON.parse(user);
 }
+
+export function getWelcomeMessage() {
+  const message = localStorage.getItem("SkillMatch");
+
+  if (!message) {
+    localStorage.setItem("SkillMatch", "Seja bem-vindo, novo usuário!");
+    return "Seja bem-vindo, novo usuário!";
+  }
+
+  return null;
+}

@@ -39,3 +39,22 @@ export function toggleOutros() {
     }
   });
 }
+
+export function toggleContact() {
+  const contactLink = document.getElementById("contact-link");
+  const contactSpace = document.getElementById("contact-space");
+
+  contactLink.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    contactSpace.classList.toggle("active");
+  });
+}
+
+export function toggleTheme() {
+  const buttonTheme = document.querySelector(".theme");
+
+  buttonTheme.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+  });
+}

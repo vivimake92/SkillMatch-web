@@ -1,6 +1,6 @@
 import { saveUser, getUser } from "./storage.js";
 
-export function submitUserForm() {
+export function submitUserForm(onSubmit) {
   const form = document.getElementById("user-form");
 
   form.addEventListener("submit", (event) => {
@@ -28,6 +28,8 @@ export function submitUserForm() {
     };
 
     saveUser(user);
+
+    onSubmit(user);
   });
 }
 

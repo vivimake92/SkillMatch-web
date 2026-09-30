@@ -292,6 +292,28 @@ main {
   display: flex;
 }
 
+#job-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto 0;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 320px;
+  max-width: 370px;
+  padding: 25px;
+  border: 1px solid #bebdbd;
+  border-radius: 10px;
+  background-color: #faf7fd;
+}
+
 .company-space {
   display: none;
   flex-direction: column;
@@ -349,6 +371,52 @@ main {
   font-size: 13px;
   font-weight: 550;
   background-color: #fff;
+}
+
+.contact-space {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 30px;
+  margin: auto;
+  border: 2px solid #bebdbd;
+  border-radius: 5px;
+  background-color: #faf7fd;
+}
+
+.contact-space.active {
+  display: flex;
+}
+
+.contact-space p {
+  font-size: 17px;
+  text-align: center;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.contact-options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #761dc9;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-options a:hover {
+  background-color: #5f16a3;
 }
 
 footer {
@@ -458,4 +526,72 @@ footer p:first-of-type {
   .footer-contact {
     width: 100%;
   }
+}
+
+/* Tema escuro */
+
+.dark-theme {
+  background-color: #242323;
+  color: #f5f5f5;
+}
+
+.dark-theme h2 {
+  color: #c084fc;
+}
+
+.dark-theme .links-nav a {
+  color: #f5f5f5;
+}
+
+.dark-theme .about-space,
+.dark-theme .company-space,
+.dark-theme .contact-space,
+.dark-theme .category-fieldset,
+.dark-theme .user-knowledge,
+.dark-theme .job-card {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-theme .about-text,
+.dark-theme .company-space p,
+.dark-theme .contact-space p,
+.dark-theme .user-knowledge label,
+.dark-theme .category-option label,
+.dark-theme .seniority-option label,
+.dark-theme .job-card p {
+  color: #f5f5f5;
+}
+
+.dark-theme .indicator-box {
+  background-color: #333;
+  border-color: #555;
+}
+
+.dark-theme .indicator-box p {
+  color: #ddd;
+}
+
+.dark-theme .company-list li {
+  background-color: #333;
+  border-color: #555;
+  color: #f5f5f5;
+}
+
+.dark-theme footer {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-theme footer p {
+  color: #ddd;
+}
+
+.dark-theme .footer-contact a {
+  color: #c084fc;
+}
+
+.dark-theme .theme {
+  border-color: #c084fc;
+  color: #c084fc;
 }
