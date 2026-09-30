@@ -1,20 +1,47 @@
-import renderUserForm from "./ui.js";
+import { renderUserForm, renderJobResults } from "./ui.js";
 
 import fetchVagas from "./load-vagas.js";
 
-import { toggleOutros, toggleCandidate, toggleCompany } from "./toggles.js";
+import {
+  toggleOutros,
+  toggleCandidate,
+  toggleCompany,
+  toggleContact,
+  toggleTheme,
+} from "./toggles.js";
 
 import { submitUserForm, loadUser } from "./form-user.js";
 
-renderUserForm();
+import { getWelcomeMessage, getUser } from "./storage.js";
 
-fetchVagas();
+import { analisarVagas } from "./compatibilidade.js";
 
-toggleOutros();
-toggleCandidate();
-toggleCompany();
+async function start() {
+  renderUserForm();
 
-submitUserForm();
-loadUser();
+  const vagas = await fetchVagas();
+
+  toggleOutros();
+
+  toggleCandidate();
+
+  toggleCompany();
+
+  toggleContact();
+
+  toggleTheme();
+
+  submitUserForm((candidato) => {
+    const resultados = analisarVagas(candidato, vagas);
+
+    renderJobResults(resultados);
+  });
+
+  loadUser();
+
+  getWelcomeMessage();
+}
+
+start();
 
 // console.log("Hello, World!");

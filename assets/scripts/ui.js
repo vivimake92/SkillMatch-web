@@ -1,4 +1,4 @@
-export default function renderUserForm() {
+export function renderUserForm() {
   const candidateSpace = document.getElementById("candidate-space");
 
   candidateSpace.innerHTML = `
@@ -273,6 +273,77 @@ export default function renderUserForm() {
 
           <button type="submit">Procurar vagas</button>
         </form>
-      </section>
+
+        <div id="job-results"></div>
   `;
+}
+
+export function renderJobResults(resultados) {
+  const jobResults = document.getElementById("job-results");
+
+  if (resultados.length === 0) {
+    jobResults.innerHTML = `
+      <h2>Nenhuma vaga encontrada</h2>
+      <p>
+        Não encontramos vagas compatíveis com sua área e nível de experiência.
+      </p>
+    `;
+
+    return;
+  }
+
+  jobResults.innerHTML = resultados
+    .map((resultado) => {
+      const { vaga, percentual, nivelCompatibilidade, conhecimentosFaltantes } =
+        resultado;
+
+      return `
+        <article class="job-card">
+          <h2>${vaga.empresa}</h2>
+
+          <h3>${vaga.cargo}</h3>
+
+          <p><strong>Modalidade:</strong> ${vaga.modalidade}</p>
+
+          <p><strong>Salário:</strong> ${vaga.salario}</p>
+
+          <p>
+            <strong>Compatibilidade:</strong>
+            ${Math.round(percentual)}%
+          </p>
+
+          <p>
+            <strong>${nivelCompatibilidade}</strong>
+          </p>
+
+          ${
+            conhecimentosFaltantes.length > 0
+              ? `
+                <p><strong>Conhecimentos que faltam:</strong></p>
+                <ul>
+                  ${conhecimentosFaltantes
+                    .map((conhecimento) => `<li>${conhecimento}</li>`)
+                    .join("")}
+                </ul>
+              `
+              : `
+                <p>
+                  Você possui todos os conhecimentos necessários para esta vaga!
+                </p>
+              `
+          }
+
+          <p>
+          <strong>Descrição da vaga:</strong>
+          ${vaga.descricao}
+          </p>
+
+          <p>
+            <strong>Benefícios:</strong>
+            ${vaga.beneficios.join(", ")}
+          </p>
+        </article>
+      `;
+    })
+    .join("");
 }
