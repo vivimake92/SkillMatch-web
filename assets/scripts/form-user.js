@@ -6,30 +6,34 @@ export function submitUserForm(onSubmit) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const category = form.querySelector('input[name="category"]:checked');
+    try {
+      const category = form.querySelector('input[name="category"]:checked');
 
-    const seniority = form.querySelector('input[name="seniority"]:checked');
+      const seniority = form.querySelector('input[name="seniority"]:checked');
 
-    const knowledge = form.querySelectorAll(
-      'input[name="user-checkbox[]"]:checked',
-    );
+      const knowledge = form.querySelectorAll(
+        'input[name="user-checkbox[]"]:checked',
+      );
 
-    const conhecimentos = Array.from(knowledge)
-      .filter((checkbox) => checkbox.value !== "Outros")
-      .map((checkbox) => checkbox.value);
+      const conhecimentos = Array.from(knowledge)
+        .filter((checkbox) => checkbox.value !== "Outros")
+        .map((checkbox) => checkbox.value);
 
-    const user = {
-      nome: form.querySelector("#user-name").value,
-      email: form.querySelector("#user-email").value,
-      idade: form.querySelector("#user-age").value,
-      categoria: category ? category.value : null,
-      senioridade: seniority ? seniority.value : null,
-      conhecimentos,
-    };
+      const user = {
+        nome: form.querySelector("#user-name").value,
+        email: form.querySelector("#user-email").value,
+        idade: form.querySelector("#user-age").value,
+        categoria: category ? category.value : null,
+        senioridade: seniority ? seniority.value : null,
+        conhecimentos,
+      };
 
-    saveUser(user);
+      saveUser(user);
 
-    onSubmit(user);
+      onSubmit(user);
+    } catch (error) {
+      console.error("Erro ao enviar o formulário:", error);
+    }
   });
 }
 
