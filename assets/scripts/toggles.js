@@ -54,7 +54,19 @@ export function toggleContact() {
 export function toggleTheme() {
   const buttonTheme = document.querySelector(".theme");
 
+  const temaSalvo = localStorage.getItem("skillmatch-theme");
+
+  if (temaSalvo === "dark") {
+    document.body.classList.add("dark-theme");
+  }
+
   buttonTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
+
+    const temaAtual = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+
+    localStorage.setItem("skillmatch-theme", temaAtual);
   });
 }

@@ -41,6 +41,7 @@ main {
 .links-nav {
   display: flex;
   justify-content: space-evenly;
+  gap: 6px;
   font-size: 20px;
   font-weight: bold;
   margin: 15px;
@@ -314,6 +315,44 @@ main {
   background-color: #faf7fd;
 }
 
+#job-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 25px auto 0;
+  padding: 20px;
+  border: 1px solid #bebdbd;
+  border-radius: 10px;
+  background-color: #faf7fd;
+}
+
+#job-filters h2 {
+  font-size: 18px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-option label {
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-option select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+}
+
 .company-space {
   display: none;
   flex-direction: column;
@@ -474,62 +513,6 @@ footer p:first-of-type {
   color: white;
 }
 
-@media (max-width: 800px) {
-  .about-space {
-    flex-direction: column;
-    gap: 30px;
-    padding: 30px 20px;
-  }
-
-  .skillmatch-logo {
-    width: 180px;
-    height: 180px;
-  }
-
-  .about-box {
-    width: 100%;
-  }
-
-  .indicators {
-    flex-wrap: wrap;
-  }
-
-  .indicator-box {
-    min-width: 110px;
-  }
-}
-
-@media (max-width: 450px) {
-  .about-space {
-    width: 95%;
-    padding: 25px 15px;
-  }
-
-  .skillmatch-logo {
-    width: 150px;
-    height: 150px;
-  }
-
-  .indicator-box {
-    width: 100%;
-  }
-}
-
-@media (max-width: 700px) {
-  footer {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 25px 20px;
-  }
-
-  .footer-contact {
-    width: 100%;
-  }
-}
-
-/* Tema escuro */
-
 .dark-theme {
   background-color: #242323;
   color: #f5f5f5;
@@ -594,4 +577,73 @@ footer p:first-of-type {
 .dark-theme .theme {
   border-color: #c084fc;
   color: #c084fc;
+}
+
+.dark-theme #job-filters {
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.dark-theme .filter-option label {
+  color: #f5f5f5;
+}
+
+.dark-theme .filter-option select {
+  background-color: #333;
+  border-color: #555;
+  color: #f5f5f5;
+}
+
+@media (max-width: 800px) {
+  .about-space {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .skillmatch-logo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-box {
+    width: 100%;
+  }
+
+  .indicators {
+    flex-wrap: wrap;
+  }
+
+  .indicator-box {
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 450px) {
+  .about-space {
+    width: 95%;
+    padding: 25px 15px;
+  }
+
+  .skillmatch-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .indicator-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .footer-contact {
+    width: 100%;
+  }
 }
