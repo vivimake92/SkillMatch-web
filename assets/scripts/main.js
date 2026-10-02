@@ -14,7 +14,9 @@ import { submitUserForm, loadUser } from "./form-user.js";
 
 import { getWelcomeMessage, getUser } from "./storage.js";
 
-import { analisarVagas } from "./compatibilidade.js";
+import { analisarVagas } from "./compatibility.js";
+
+import iniciarFiltros from "./user-filter.js";
 
 async function start() {
   renderUserForm();
@@ -33,6 +35,8 @@ async function start() {
 
   submitUserForm((candidato) => {
     const resultados = analisarVagas(candidato, vagas);
+
+    iniciarFiltros(resultados, renderJobResults);
 
     renderJobResults(resultados);
   });

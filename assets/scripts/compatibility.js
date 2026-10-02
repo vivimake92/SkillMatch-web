@@ -1,4 +1,4 @@
-export function calcularCompatibilidade(candidato, vaga) {
+function calcularCompatibilidade(candidato, vaga) {
   let pontos = 0;
   let conhecimentosFaltantes = [];
 
@@ -33,7 +33,20 @@ export function calcularCompatibilidade(candidato, vaga) {
   };
 }
 
-export function filtrarVagas(candidato, vagas) {
+export function analisarVagas(candidato, vagas) {
+  const vagasFiltradas = filtrarVagas(candidato, vagas);
+
+  return vagasFiltradas.map((vaga) => {
+    const compatibilidade = calcularCompatibilidade(candidato, vaga);
+
+    return {
+      vaga,
+      ...compatibilidade,
+    };
+  });
+}
+
+function filtrarVagas(candidato, vagas) {
   return vagas.filter((vaga) => {
     const mesmaCategoria = vaga.categoria === candidato.categoria;
 
@@ -45,15 +58,26 @@ export function filtrarVagas(candidato, vagas) {
   });
 }
 
-export function analisarVagas(candidato, vagas) {
-  const vagasFiltradas = filtrarVagas(candidato, vagas);
+export class RecomendacaoEstudo {
+  constructor(conhecimento) {
+    this.conhecimento = conhecimento;
+  }
 
-  return vagasFiltradas.map((vaga) => {
-    const compatibilidade = calcularCompatibilidade(candidato, vaga);
+  gerarRecomendacao() {
+    return `Recomendamos estudar ${this.conhecimento} para aumentar sua compatibilidade com esta vaga.`;
+  }
+}
 
-    return {
-      vaga,
-      ...compatibilidade,
-    };
+export class RecomendacaoTecnologia extends RecomendacaoEstudo {
+  gerarRecomendacao() {
+    return `Estude ${this.conhecimento} para aumentar sua compatibilidade com esta vaga.`;
+  }
+}
+
+export function gerarRecomendacoes(conhecimentosFaltantes) {
+  return conhecimentosFaltantes.map((conhecimento) => {
+    const recomendacao = new RecomendacaoTecnologia(conhecimento);
+
+    return recomendacao.gerarRecomendacao();
   });
 }

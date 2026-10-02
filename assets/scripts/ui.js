@@ -1,3 +1,5 @@
+import { gerarRecomendacoes } from "./compatibility.js";
+
 export function renderUserForm() {
   const candidateSpace = document.getElementById("candidate-space");
 
@@ -274,6 +276,30 @@ export function renderUserForm() {
           <button type="submit">Procurar vagas</button>
         </form>
 
+<div id="job-filters">
+  <h2>Filtrar e ordenar vagas</h2>
+
+  <div class="filter-option">
+    <label for="filter-modality">Modalidade:</label>
+
+    <select id="filter-modality">
+      <option value="todas">Todas</option>
+      <option value="Remoto">Remoto</option>
+      <option value="Híbrido">Híbrido</option>
+      <option value="Presencial">Presencial</option>
+    </select>
+  </div>
+
+  <div class="filter-option">
+    <label for="sort-jobs">Ordenar por:</label>
+
+    <select id="sort-jobs">
+      <option value="compatibilidade">Compatibilidade</option>
+      <option value="maior-salario">Maior salário</option>
+    </select>
+  </div>
+</div>
+
         <div id="job-results"></div>
   `;
 }
@@ -296,6 +322,8 @@ export function renderJobResults(resultados) {
     .map((resultado) => {
       const { vaga, percentual, nivelCompatibilidade, conhecimentosFaltantes } =
         resultado;
+
+      const recomendacoes = gerarRecomendacoes(conhecimentosFaltantes);
 
       return `
         <article class="job-card">
@@ -325,6 +353,18 @@ export function renderJobResults(resultados) {
                     .map((conhecimento) => `<li>${conhecimento}</li>`)
                     .join("")}
                 </ul>
+                  ${
+                    recomendacoes.length > 0
+                      ? `
+                    <p><strong>Recomendações de estudo:</strong></p>
+                    <ul>
+                    ${recomendacoes
+                      .map((recomendacao) => `<li>${recomendacao}</li>`)
+                      .join("")}
+                    </ul>
+                    `
+                      : ""
+                  }
               `
               : `
                 <p>
