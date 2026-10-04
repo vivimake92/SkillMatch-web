@@ -33,6 +33,18 @@ function calcularCompatibilidade(candidato, vaga) {
   };
 }
 
+function filtrarVagas(candidato, vagas) {
+  return vagas.filter((vaga) => {
+    const mesmaCategoria = vaga.categoria === candidato.categoria;
+
+    const mesmaSenioridade = vaga.cargo
+      .toLowerCase()
+      .includes(candidato.senioridade.toLowerCase());
+
+    return mesmaCategoria && mesmaSenioridade;
+  });
+}
+
 export function analisarVagas(candidato, vagas) {
   const vagasFiltradas = filtrarVagas(candidato, vagas);
 
@@ -46,25 +58,13 @@ export function analisarVagas(candidato, vagas) {
   });
 }
 
-function filtrarVagas(candidato, vagas) {
-  return vagas.filter((vaga) => {
-    const mesmaCategoria = vaga.categoria === candidato.categoria;
-
-    const mesmaSenioridade = vaga.cargo
-      .toLowerCase()
-      .includes(candidato.senioridade.toLowerCase());
-
-    return mesmaCategoria && mesmaSenioridade;
-  });
-}
-
 export class RecomendacaoEstudo {
   constructor(conhecimento) {
     this.conhecimento = conhecimento;
   }
 
   gerarRecomendacao() {
-    return `Recomendamos estudar ${this.conhecimento} para aumentar sua compatibilidade com esta vaga.`;
+    return this.conhecimento;
   }
 }
 
