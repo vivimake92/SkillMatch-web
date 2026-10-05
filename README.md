@@ -40,6 +40,6 @@ Após decidir qual lógica seguir, eu desenvolvia o código e o testava. Caso de
 
 - [Github-Pages](https://vivimake92.github.io/SkillMatch-web/)
 - [KanBan Trello](https://trello.com/b/2sj2tzQG/projeto-final-modulo01-sctec)
-- [Link do vídeo explicativo]()
+- [Link do vídeo explicativo](https://youtu.be/POdoT65I7eM)
 - [Lista de pull requests](https://github.com/vivimake92/SkillMatch-web/pulls?q=is%3Apr+state%3Aclosed)
 - [Lista de Branches](https://github.com/vivimake92/SkillMatch-web/branches)
